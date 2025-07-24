@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "732b7680-3a40-4437-838f-d8ccb47a8a82",
+		"name": "email-mailosaur",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "1453931",
+		"_collection_link": "https://red-firefly-245852.postman.co/workspace/9946c0fb-b821-4fe1-ad63-82fbf95500c7/collection/1453931-732b7680-3a40-4437-838f-d8ccb47a8a82?action=share&source=collection_link&creator=1453931"
+	},
+	"item": [
+		{
+			"name": "Send email",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"username": "{{API_KEY}}",
+						"password": ""
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"to\": \"user1@lp0jp33k.mailosaur.net\",\n    \"html\": \"<p>Hello world.</p>\",\n    \"text\": \"Hello world.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://mailosaur.com/api/messages?server=lp0jp33k",
+					"protocol": "https",
+					"host": [
+						"mailosaur",
+						"com"
+					],
+					"path": [
+						"api",
+						"messages"
+					],
+					"query": [
+						{
+							"key": "server",
+							"value": "lp0jp33k"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search message",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"username": "{{API_KEY}}",
+						"password": ""
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"sentTo\": \"user1@lp0jp33k.mailosaur.net\",\n    \"subject\": \"Example message\",\n    \"match\": \"ALL\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://mailosaur.com/api/messages/search?server=lp0jp33k",
+					"protocol": "https",
+					"host": [
+						"mailosaur",
+						"com"
+					],
+					"path": [
+						"api",
+						"messages",
+						"search"
+					],
+					"query": [
+						{
+							"key": "server",
+							"value": "lp0jp33k"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "API_KEY",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
