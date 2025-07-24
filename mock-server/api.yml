@@ -1,0 +1,25 @@
+-  request:
+      url: /product/1
+      method: GET
+   response:
+    - status: 200
+      headers:
+         content-type: application/json; charset=UTF-8
+      file: 1.json
+-  request:
+      url: /product/4
+      method: GET
+   response:
+    - status: 200
+      latency: 6000
+      headers:
+         content-type: application/json; charset=UTF-8
+      file: 1.json
+-  request:
+      url: /product/2
+      method: GET
+   response:
+    - status: 404
+      headers:
+         content-type: application/json; charset=UTF-8
+      file: 2.json
